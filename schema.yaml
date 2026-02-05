@@ -1,0 +1,18 @@
+apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
+kind: PubSubSchema
+metadata:
+  name: test-schema
+  namespace: default
+spec:
+  type: PROTOCOL_BUFFER
+  definition: |
+    syntax = "proto3";
+
+    package example.v1;
+
+    message TestMessage {
+      string id = 1;
+      string name = 2;
+      int32 count = 3;
+      string status = 4;
+    }
