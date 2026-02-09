@@ -6,4 +6,4 @@ spec:
   schemaSettings:
     schemaRef:
       name: test-schema
-    encoding: PROTOCOL_BUFFER
+    encoding: BINARY
