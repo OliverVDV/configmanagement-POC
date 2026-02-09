@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: core-app
+
+resources:
+  - ../../base
+
+commonAnnotations:
+  cnrm.cloud.google.com/project-id: playground-ovdven-20260205
+
+patches:
+  # PubSubSchema needs projectRef (required by CRD), inject it once for all schemas in this folder.
+  - target:
+      group: pubsub.cnrm.cloud.google.com
+      version: v1beta1
+      kind: PubSubSchema
+    patch: |-
+      - op: add
+        path: /spec/projectRef
+        value:
+          external: playground-ovdven-20260205
