@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package coreapp.event.v1;
+
+// EventUpdatedEventData represents when a event's configuration has been updated
+message EventUpdatedEventData {
+  // The list of affected event IDs
+  repeated string id = 1;
+}

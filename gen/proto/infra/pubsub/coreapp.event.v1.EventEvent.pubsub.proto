@@ -1,0 +1,9 @@
+syntax = "proto2";
+message EventEvent {
+  oneof event_data {
+    Inline_coreapp_event_v1_EventUpdatedEventData eventUpserted = 1;
+  }
+  message Inline_coreapp_event_v1_EventUpdatedEventData {
+    repeated string id = 1;
+  }
+}

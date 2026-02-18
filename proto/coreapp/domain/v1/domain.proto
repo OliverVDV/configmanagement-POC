@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package coreapp.domain.v1;
+
+import "coreapp/domain/v1/event_data.proto";
+
+// DomainEvent represents various domain-related events in the system.
+message DomainEvent {
+  // A oneof field containing different types of domain event data.
+  oneof event_data {
+    // Event data for when a domain is created or updated.
+    DomainUpdatedEventData domainUpserted = 1;
+  }
+}

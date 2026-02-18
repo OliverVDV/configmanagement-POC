@@ -2,6 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - schema.yaml
-  - topic.yaml
-  - topic-2.yaml
+  - schemas
+  - event-topic.yaml
+  - domain-topic.yaml
