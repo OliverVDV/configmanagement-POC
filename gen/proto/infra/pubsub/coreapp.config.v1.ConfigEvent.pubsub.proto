@@ -1,0 +1,9 @@
+syntax = "proto2";
+message ConfigEvent {
+  oneof event_data {
+    Inline_coreapp_config_v1_ConfigUpdatedEventData eventUpserted = 1;
+  }
+  message Inline_coreapp_config_v1_ConfigUpdatedEventData {
+    repeated string id = 1;
+  }
+}

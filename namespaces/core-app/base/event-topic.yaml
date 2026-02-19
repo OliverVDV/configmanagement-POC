@@ -1,9 +1,9 @@
 apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
 kind: PubSubTopic
 metadata:
-  name: event
+  name: config
 spec:
   schemaSettings:
     schemaRef:
-      name: coreapp-event-v1-eventevent
+      name: coreapp-config-v1-configevent
     encoding: BINARY

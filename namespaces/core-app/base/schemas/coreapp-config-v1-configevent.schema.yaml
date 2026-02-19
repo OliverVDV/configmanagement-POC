@@ -1,16 +1,16 @@
 apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
 kind: PubSubSchema
 metadata:
-  name: coreapp-event-v1-eventevent
+  name: coreapp-config-v1-configevent
 spec:
   type: PROTOCOL_BUFFER
   definition: |
     syntax = "proto2";
-    message EventEvent {
+    message ConfigEvent {
       oneof event_data {
-        Inline_coreapp_event_v1_EventUpdatedEventData eventUpserted = 1;
+        Inline_coreapp_config_v1_ConfigUpdatedEventData eventUpserted = 1;
       }
-      message Inline_coreapp_event_v1_EventUpdatedEventData {
+      message Inline_coreapp_config_v1_ConfigUpdatedEventData {
         repeated string id = 1;
       }
     }

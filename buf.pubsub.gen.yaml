@@ -13,4 +13,4 @@ inputs:
   - directory: proto
     types:
       - 'coreapp.domain.v1.DomainEvent'
-      - 'coreapp.event.v1.EventEvent'
+      - 'coreapp.config.v1.ConfigEvent'

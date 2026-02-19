@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package coreapp.config.v1;
+
+import "coreapp/config/v1/event_data.proto";
+
+// ConfigEvent represents various config-related events in the system.
+message ConfigEvent {
+  // A oneof field containing different types of config event data.
+  oneof event_data {
+    // Event data for when a event is created or updated.
+    ConfigUpdatedEventData eventUpserted = 1;
+  }
+}
