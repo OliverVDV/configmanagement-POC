@@ -4,6 +4,6 @@ package coreapp.config.v1;
 
 // ConfigUpdatedEventData represents when a config has been updated
 message ConfigUpdatedEventData {
-  // The list of affected event IDs
-  repeated string id = 1;
+  // The config ID
+  string id = 1;
 }
