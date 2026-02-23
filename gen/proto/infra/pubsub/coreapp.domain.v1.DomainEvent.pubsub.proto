@@ -4,6 +4,6 @@ message DomainEvent {
     Inline_coreapp_domain_v1_DomainUpdatedEventData domainUpserted = 1;
   }
   message Inline_coreapp_domain_v1_DomainUpdatedEventData {
-    repeated string id = 1;
+    optional string id = 1;
   }
 }

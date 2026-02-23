@@ -4,6 +4,6 @@ message ConfigEvent {
     Inline_coreapp_config_v1_ConfigUpdatedEventData eventUpserted = 1;
   }
   message Inline_coreapp_config_v1_ConfigUpdatedEventData {
-    repeated string id = 1;
+    optional string id = 1;
   }
 }
