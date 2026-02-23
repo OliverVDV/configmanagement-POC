@@ -13,6 +13,6 @@ spec:
       message Inline_coreapp_domain_v1_DomainUpdatedEventData {
         repeated string id = 1;
         optional string name = 2;
-      }
+
     }
     
