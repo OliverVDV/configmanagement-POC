@@ -4,6 +4,8 @@ package coreapp.domain.v1;
 
 // DomainUpdatedEventData represents when a domain's configuration has been updated
 message DomainUpdatedEventData {
-  // The domain id
-  string id = 1;
+  // The list of affected domain IDs
+  repeated string id = 1;
+  // The domain name
+  string name = 2;
 }

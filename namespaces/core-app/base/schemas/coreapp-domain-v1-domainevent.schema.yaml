@@ -11,7 +11,8 @@ spec:
         Inline_coreapp_domain_v1_DomainUpdatedEventData domainUpserted = 1;
       }
       message Inline_coreapp_domain_v1_DomainUpdatedEventData {
-        optional string id = 1;
+        repeated string id = 1;
+        optional string name = 2;
       }
     }
     

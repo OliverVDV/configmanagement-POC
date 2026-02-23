@@ -24,8 +24,10 @@ const (
 // DomainUpdatedEventData represents when a domain's configuration has been updated
 type DomainUpdatedEventData struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The domain id
-	Id            string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// The list of affected domain IDs
+	Id []string `protobuf:"bytes,1,rep,name=id,proto3" json:"id,omitempty"`
+	// The domain name
+	Name          string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,9 +62,16 @@ func (*DomainUpdatedEventData) Descriptor() ([]byte, []int) {
 	return file_coreapp_domain_v1_event_data_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *DomainUpdatedEventData) GetId() string {
+func (x *DomainUpdatedEventData) GetId() []string {
 	if x != nil {
 		return x.Id
+	}
+	return nil
+}
+
+func (x *DomainUpdatedEventData) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -71,9 +80,10 @@ var File_coreapp_domain_v1_event_data_proto protoreflect.FileDescriptor
 
 const file_coreapp_domain_v1_event_data_proto_rawDesc = "" +
 	"\n" +
-	"\"coreapp/domain/v1/event_data.proto\x12\x11coreapp.domain.v1\"(\n" +
+	"\"coreapp/domain/v1/event_data.proto\x12\x11coreapp.domain.v1\"<\n" +
 	"\x16DomainUpdatedEventData\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02idB\xc7\x01\n" +
+	"\x02id\x18\x01 \x03(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04nameB\xc7\x01\n" +
 	"\x15com.coreapp.domain.v1B\x0eEventDataProtoP\x01Z8coreapp.com/packages/go/proto/coreapp/domain/v1;domainv1\xa2\x02\x03CDX\xaa\x02\x11Coreapp.Domain.V1\xca\x02\x11Coreapp\\Domain\\V1\xe2\x02\x1dCoreapp\\Domain\\V1\\GPBMetadata\xea\x02\x13Coreapp::Domain::V1b\x06proto3"
 
 var (

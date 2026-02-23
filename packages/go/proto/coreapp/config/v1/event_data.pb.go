@@ -24,8 +24,10 @@ const (
 // ConfigUpdatedEventData represents when a config has been updated
 type ConfigUpdatedEventData struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// The config ID
-	Id            string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	// The list of affected event IDs
+	Id []string `protobuf:"bytes,1,rep,name=id,proto3" json:"id,omitempty"`
+	// The config name
+	Name          string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,9 +62,16 @@ func (*ConfigUpdatedEventData) Descriptor() ([]byte, []int) {
 	return file_coreapp_config_v1_event_data_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ConfigUpdatedEventData) GetId() string {
+func (x *ConfigUpdatedEventData) GetId() []string {
 	if x != nil {
 		return x.Id
+	}
+	return nil
+}
+
+func (x *ConfigUpdatedEventData) GetName() string {
+	if x != nil {
+		return x.Name
 	}
 	return ""
 }
@@ -71,9 +80,10 @@ var File_coreapp_config_v1_event_data_proto protoreflect.FileDescriptor
 
 const file_coreapp_config_v1_event_data_proto_rawDesc = "" +
 	"\n" +
-	"\"coreapp/config/v1/event_data.proto\x12\x11coreapp.config.v1\"(\n" +
+	"\"coreapp/config/v1/event_data.proto\x12\x11coreapp.config.v1\"<\n" +
 	"\x16ConfigUpdatedEventData\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02idB\xc7\x01\n" +
+	"\x02id\x18\x01 \x03(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04nameB\xc7\x01\n" +
 	"\x15com.coreapp.config.v1B\x0eEventDataProtoP\x01Z8coreapp.com/packages/go/proto/coreapp/config/v1;configv1\xa2\x02\x03CCX\xaa\x02\x11Coreapp.Config.V1\xca\x02\x11Coreapp\\Config\\V1\xe2\x02\x1dCoreapp\\Config\\V1\\GPBMetadata\xea\x02\x13Coreapp::Config::V1b\x06proto3"
 
 var (
